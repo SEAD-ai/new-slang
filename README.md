@@ -170,16 +170,6 @@ That last one is the point. **"Ate and left no crumbs" isn't a phrase to memoriz
 
 One slang move per 1–2 sentences, in the predicate, delivered **deadpan**. Enthusiasm is what kills it. If nobody reacts, you did it right.
 
-## Two things worth knowing
-
-**On attribution.** A large share of this vocabulary is [AAVE](https://en.wikipedia.org/wiki/African-American_Vernacular_English) or comes from Black queer ballroom and drag culture — *ate, slay, serving, tea, periodt, no cap, gagged, giving.* The skill states origins once, plainly, without lecturing. The practical line: **borrow words, not a voice.** Individual borrowed words in your own natural register is ordinary language contact. Switching into a broad accent is not.
-
-**On freshness.** This vocabulary rotates on a months-to-a-year cycle and any model has a knowledge cutoff, so the skill is instructed **never to claim a term is currently trending.** The durable heuristic it gives you instead:
-
-> **If a brand used it in an ad, it's dead.**
-
-Not because brands are uncool, but because slang's value *is* in-group membership — a brand using a term is definitionally an outsider, so adoption kills it. Which is also why chasing recency backfires for you personally: as an adult, you are structurally the outsider. **Precision reads as fluent. Recency reads as desperate.** Being an adult who uses "mid" perfectly is cool. Being an adult who uses "6-7" is not, no matter how current it is.
-
 ## Contributing
 
 Slang rots. PRs that mark a term `[DEAD]` are as valuable as ones that add terms — arguably more. See [CONTRIBUTING.md](./CONTRIBUTING.md), or open a [term report](https://github.com/SEAD-ai/slang/issues/new/choose).
