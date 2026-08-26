@@ -1,0 +1,20 @@
+{
+  "name": "slang",
+  "description": "Speak and teach current internet slang (Gen Z + Gen Alpha). Decode what younger colleagues actually mean, audit brand copy for dead slang, and learn to deploy it without getting clocked.",
+  "author": {
+    "name": "SEAD",
+    "url": "https://sead.ai"
+  },
+  "homepage": "https://github.com/SEAD-ai/slang",
+  "license": "MIT",
+  "keywords": [
+    "slang",
+    "gen-z",
+    "gen-alpha",
+    "claude-code",
+    "skill",
+    "communication",
+    "writing",
+    "tone"
+  ]
+}

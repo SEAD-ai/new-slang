@@ -1,0 +1,17 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "slang",
+  "description": "Speak and teach current internet slang for Claude Code. Gen Z to speak, Gen Alpha to decode only. Includes cross-generational tone decoding and brand-copy auditing.",
+  "owner": {
+    "name": "SEAD",
+    "url": "https://sead.ai"
+  },
+  "plugins": [
+    {
+      "name": "slang",
+      "description": "it's giving fluent — talk in current slang and learn it while you do. Decode what younger colleagues mean, audit copy for dead slang.",
+      "source": "./",
+      "category": "productivity"
+    }
+  ]
+}
