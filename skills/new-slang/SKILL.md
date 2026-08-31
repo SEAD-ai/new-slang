@@ -6,7 +6,7 @@ description: >
   (zero tokens, never touches an answer) and in-answer immersion (Claude works the language
   into replies, glossing every new term). Levels beginner/intermediate/pro gate CONTENT;
   density off/seasoned/fluent/saturated gates FREQUENCY — they are independent. Use when the
-  user invokes /slang, says "new slang", "teach me <language>", "language mode", asks to
+  user invokes /new-slang or /slang, says "new slang", "teach me <language>", "language mode", asks to
   change language/level/density, or asks what a term from one of these languages means.
 ---
 
@@ -17,7 +17,7 @@ costs the answer.
 
 If `~/.claude/newslang-config.json` does not exist, run onboarding BEFORE doing anything else. Ask via
 AskUserQuestion — four questions, then write config and confirm in one line. Never re-ask on
-later invocations; `/slang setup` reopens this deliberately.
+later invocations; `/new-slang setup` reopens this deliberately.
 
 1. **Language** — read options from `newslang/languages/_manifest.tsv` (never hardcode; the list grows).
 2. **Level** — `beginner` / `intermediate` / `pro`. Explain briefly: levels gate *content*
@@ -30,7 +30,7 @@ later invocations; `/slang setup` reopens this deliberately.
    pro may want seasoned in a work context. Never infer one from the other.
 
 Then run `newslang/init.sh <language> <level> <ambient> <inAnswer> [density]` and confirm:
-> Italian, beginner, ambient card only. `/slang setup` to change it.
+> Italian, beginner, ambient card only. `/new-slang setup` to change it.
 
 If ambient was chosen and no `statusLine` is configured in settings, offer to add one — show
 the exact settings diff first, and say that a custom status line hides some footer hints,

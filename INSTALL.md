@@ -12,7 +12,7 @@ claude plugin install new-slang@new-slang
 Then, in any session:
 
 ```
-/slang setup
+/new-slang setup
 ```
 
 Four questions — language, level, channels, density — written to
@@ -51,7 +51,7 @@ footer hints, including `esc to interrupt`.
 
 ## Other ways in
 
-**Skills only** (conversational channels, no ambient card, no `/slang` command):
+**Skills only** (conversational channels, no ambient card, no `/new-slang` command):
 
 ```bash
 npx skills add SEAD-ai/new-slang
@@ -82,14 +82,14 @@ updates; a hardcoded cache path does not.
 ## Verify
 
 ```
-/slang wtf mid
+/new-slang wtf mid
 ```
 
 You should get a definition with a register flag.
 
-If you get **"No slang command or skill available here"** while `/slang` still
-appears in the command palette, you are on the pre-rename `slang` plugin from
-before the `/slang` command shipped — migrate (below).
+If `/new-slang` is not recognized, you are on the pre-rename `slang` plugin —
+migrate (below). The verb is now `/new-slang`; `/slang` survives only as the
+namespaced `/new-slang:slang` alias.
 
 To verify the ambient card without waiting for a session restart:
 
@@ -102,14 +102,14 @@ Two lines out — status, then a card — means it's working.
 ## Use
 
 ```
-/slang setup                    the four questions (re-runs onboarding)
-/slang                          turn on the in-answer channel
-/slang wtf <term>               define one term
-/slang decode <text>            translate an inbound message, including tone
-/slang audit <copy>             check brand copy before it ships
-/slang check <text>             vibe check your own writing
-/slang drill                    5 rapid questions
-/slang off                      back to normal
+/new-slang setup                the four questions (re-runs onboarding)
+/new-slang                      turn on the in-answer channel
+/new-slang wtf <term>           define one term
+/new-slang decode <text>            translate an inbound message, including tone
+/new-slang audit <copy>             check brand copy before it ships
+/new-slang check <text>             vibe check your own writing
+/new-slang drill                5 rapid questions
+/new-slang off                  back to normal
 ```
 
 Plain language works too: "switch to Spanish", "go pro", "what does magari

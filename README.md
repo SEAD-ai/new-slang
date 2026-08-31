@@ -55,7 +55,7 @@ Turn on the second channel and Claude also weaves the language into its replies,
 
 ## Install
 
-**Full install** (skills + `/slang` command + the ambient card engine):
+**Full install** (skills + `/new-slang` command + the ambient card engine):
 
 ```bash
 claude plugin marketplace add SEAD-ai/new-slang
@@ -65,7 +65,7 @@ claude plugin install new-slang@new-slang
 Then in any session:
 
 ```
-/slang setup
+/new-slang setup
 ```
 
 It asks four things — language, level, channels, density — and offers to wire the status line for you. That's the whole setup. See [INSTALL.md](./INSTALL.md) for the manual status-line wiring, clone installs, and `npx skills add` (conversational skill only — no ambient card), and migrating from the old `slang` plugin.
@@ -134,14 +134,14 @@ One move per 1–2 sentences, in the predicate, deadpan. If nobody reacts, you d
 
 | Command | Does |
 |---|---|
-| `/slang setup` | The four questions. Also runs automatically on first use. |
-| `/slang` | Turn on the in-answer channel with your configured language. |
-| `/slang wtf <term>` | Define, with register flag and what it's commonly mistaken for. |
-| `/slang decode <text>` | **Inbound translation, including tone.** The most useful one. |
-| `/slang audit <copy>` | Check brand/marketing copy before it ships — dead terms, register mismatch, origin risk. |
-| `/slang check <text>` | Vibe check *your* writing. Scored /10, names the tell that outs you. |
-| `/slang drill` | 5 rapid questions. |
-| `/slang off` | Back to normal. |
+| `/new-slang setup` | The four questions. Also runs automatically on first use. |
+| `/new-slang` | Turn on the in-answer channel with your configured language. |
+| `/new-slang wtf <term>` | Define, with register flag and what it's commonly mistaken for. |
+| `/new-slang decode <text>` | **Inbound translation, including tone.** The most useful one. |
+| `/new-slang audit <copy>` | Check brand/marketing copy before it ships — dead terms, register mismatch, origin risk. |
+| `/new-slang check <text>` | Vibe check *your* writing. Scored /10, names the tell that outs you. |
+| `/new-slang drill` | 5 rapid questions. |
+| `/new-slang off` | Back to normal. |
 
 Natural language works everywhere: "what does magari mean", "switch to Spanish", "vibe check this", "decode this Slack message".
 
