@@ -56,7 +56,22 @@ Start a session and run:
 /slang wtf mid
 ```
 
-You should get a definition with a register flag. If the command isn't recognized, the skill isn't being discovered — check that `SKILL.md` sits directly inside a directory named `slang`, and that the YAML frontmatter at the top is intact.
+You should get a definition with a register flag.
+
+If you get **"No slang command or skill available here"** while `/slang` still appears in the command
+palette, you are on a version before the `/slang` command shipped. Update:
+
+```bash
+claude plugin update slang@slang
+```
+
+Slash commands come from a plugin's `commands/` directory. A plugin's *skills* are namespaced
+`plugin:skill` and are normally model-invoked, so a skill alone does not create a bare `/slang`
+entry point — which is why the plugin install and the `~/.claude/skills/` install used to behave
+differently. Both now route through the same command.
+
+If it still fails, check that `SKILL.md` sits directly inside a directory named `slang` and that the
+YAML frontmatter at the top is intact.
 
 ## Use
 
