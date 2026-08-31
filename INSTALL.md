@@ -2,7 +2,7 @@
 
 ## Full install (recommended)
 
-Skills, the `/slang` command, and the ambient status-line card:
+Skills, the `/new-slang` command, and the ambient status-line card:
 
 ```bash
 claude plugin marketplace add SEAD-ai/new-slang
@@ -21,7 +21,7 @@ survives updates.
 
 ## Wiring the ambient card
 
-`/slang setup` offers to do this for you. To do it by hand, add to
+`/new-slang setup` offers to do this for you. To do it by hand, add to
 `~/.claude/settings.json`:
 
 **Plugin install** — the cache path contains a version hash that changes on

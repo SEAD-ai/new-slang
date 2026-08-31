@@ -72,7 +72,7 @@ It asks four things — language, level, channels, density — and offers to wir
 
 ## How it works
 
-Three independent dials, set once at `/slang setup` and changeable any time in plain language ("switch to Spanish", "go pro", "too much, dial it back"):
+Three independent dials, set once at `/new-slang setup` and changeable any time in plain language ("switch to Spanish", "go pro", "too much, dial it back"):
 
 | Dial | Governs | Values |
 |---|---|---|
