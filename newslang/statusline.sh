@@ -11,7 +11,9 @@
 set -uo pipefail
 
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-CONF="${NEWSLANG_CONFIG:-$HERE/config.json}"
+# Config lives OUTSIDE the install dir: a plugin's cache is replaced on every
+# update, which would wipe it and silently re-trigger onboarding.
+CONF="${NEWSLANG_CONFIG:-$HOME/.claude/newslang-config.json}"
 LANGS="$HERE/languages"
 MANIFEST="$LANGS/_manifest.tsv"
 

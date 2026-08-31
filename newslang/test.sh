@@ -78,7 +78,7 @@ ms=$(( (e-s)/10/1000000 ))
 [ "$ms" -lt 120 ] && ok "render avg ${ms}ms (<120ms)" || bad "render too slow: ${ms}ms"
 
 echo "— init.sh —"
-"$HERE/init.sh" it beginner true false >/dev/null 2>&1 && jq -e '.language=="it"' "$HERE/config.json" >/dev/null && ok "init writes valid config" || bad "init broken"
+NEWSLANG_CONFIG="$TMP/init.json" "$HERE/init.sh" it beginner true false >/dev/null 2>&1 && jq -e '.language=="it"' "$TMP/init.json" >/dev/null && ok "init writes valid config" || bad "init broken"
 "$HERE/init.sh" klingon pro >/dev/null 2>&1 && bad "init accepted unknown language" || ok "init rejects unknown language"
 "$HERE/init.sh" es wizard >/dev/null 2>&1 && bad "init accepted bad level" || ok "init rejects bad level"
 

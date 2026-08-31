@@ -6,7 +6,7 @@ allowed-tools: ["Skill", "Read"]
 
 # Slang
 
-**FIRST — setup routing:** if `newslang/config.json` does not exist, or `$ARGUMENTS` is `setup`,
+**FIRST — setup routing:** if `~/.claude/newslang-config.json` does not exist, or `$ARGUMENTS` is `setup`,
 load the `slang:new-slang` skill (fallback: `new-slang`) and run its onboarding before anything
 else — New Slang asks how it should work before it works.
 

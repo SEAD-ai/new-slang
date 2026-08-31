@@ -15,7 +15,7 @@ costs the answer.
 
 ## First run — configure before anything else
 
-If `newslang/config.json` does not exist, run onboarding BEFORE doing anything else. Ask via
+If `~/.claude/newslang-config.json` does not exist, run onboarding BEFORE doing anything else. Ask via
 AskUserQuestion — four questions, then write config and confirm in one line. Never re-ask on
 later invocations; `/slang setup` reopens this deliberately.
 
@@ -39,7 +39,7 @@ including `esc to interrupt`. Do not touch settings without explicit confirmatio
 
 ## The dials
 
-Read `newslang/config.json` at the start of any session where this skill is active.
+Read `~/.claude/newslang-config.json` at the start of any session where this skill is active.
 
 | Key | Governs |
 |---|---|
