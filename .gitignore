@@ -6,3 +6,6 @@ node_modules/
 .idea/
 .vscode/
 Thumbs.db
+
+# user state, not source
+newslang/config.json

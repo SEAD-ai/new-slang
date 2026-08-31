@@ -6,9 +6,14 @@ allowed-tools: ["Skill", "Read"]
 
 # Slang
 
-**FIRST: Load the `slang:slang` skill** using the Skill tool. If that name does not resolve (the
-skill is installed standalone rather than as a plugin), load `slang` instead. Everything below is
-routing — the skill itself holds the vocabulary, the gloss rule, the tiers, and the boundaries.
+**FIRST — setup routing:** if `newslang/config.json` does not exist, or `$ARGUMENTS` is `setup`,
+load the `slang:new-slang` skill (fallback: `new-slang`) and run its onboarding before anything
+else — New Slang asks how it should work before it works.
+
+Otherwise, **load the `slang:slang` skill** using the Skill tool. If that name does not resolve
+(the skill is installed standalone rather than as a plugin), load `slang` instead. Everything
+below is routing — the skill itself holds the vocabulary, the gloss rule, the tiers, and the
+boundaries. When config sets a non-gen-z language, `slang:new-slang` is the authority instead.
 
 **Invocation:** `$ARGUMENTS`
 

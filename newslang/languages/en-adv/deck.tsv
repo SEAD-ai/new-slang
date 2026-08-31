@@ -1,0 +1,30 @@
+1	comprise	the whole comprises the parts	"the suite comprises four tools"	TRAP	not "is comprised of" — that inverts it
+1	fewer / less	fewer for count, less for mass	"fewer bugs, less latency"	PRECISE	
+1	disinterested	impartial, no stake	"we need a disinterested reviewer"	TRAP	not "uninterested" (bored)
+1	begs the question	assumes the conclusion it claims to prove	"that begs the question"	TRAP	not "raises the question"
+1	penultimate	second to last	"the penultimate step"	TRAP	not "the very last"
+1	enormity	monstrous wickedness	"the enormity of the crime"	TRAP	not "enormous size"
+1	refute	to disprove with evidence	"the data refutes it"	TRAP	not merely "deny"
+1	peruse	to read carefully	"peruse the contract"	TRAP	not "skim" — it means the opposite
+1	nonplussed	bewildered, at a loss	"she was nonplussed"	TRAP	US informal use has inverted it; ambiguous now
+1	literally	actually, without exaggeration	"literally on fire"	TRAP	intensifier use is common but weakens you in writing
+2	enervate	to drain of energy	"an enervating meeting"	TRAP	sounds like "energise", means the reverse
+2	fulsome	excessive to the point of insincerity	"fulsome praise"	TRAP	not "generous" — it's an insult
+2	tortuous / torturous	winding / causing pain	"a tortuous argument"	PRECISE	one letter, unrelated meanings
+2	specious	superficially plausible, actually wrong	"a specious argument"	PRECISE	the precise word for confident nonsense
+2	tendentious	slanted toward a conclusion	"a tendentious summary"	PRECISE	stronger than "biased"
+2	perfunctory	done without care, going through motions	"a perfunctory review"	PRECISE	
+2	inchoate	begun but not yet formed	"an inchoate plan"	PRECISE	not "chaotic"
+2	salutary	beneficial, esp. correctively	"a salutary reminder"	PRECISE	
+2	anodyne	inoffensive to the point of blandness	"anodyne feedback"	PRECISE	best word for corporate non-answers
+2	desultory	lacking plan, jumping about	"a desultory search"	PRECISE	
+3	sui generis	in a class of its own	"the codebase is sui generis"	ELEVATED	Latin; no plural agreement needed
+3	ersatz	an inferior substitute	"ersatz agile"	ELEVATED	from German; carries contempt
+3	ossified	hardened into rigidity	"an ossified process"	ELEVATED	
+3	apocryphal	widely repeated, probably untrue	"an apocryphal origin story"	PRECISE	
+3	invidious	likely to cause resentment; unfairly discriminating	"an invidious comparison"	ELEVATED	
+3	lapidary	concise and polished, as if carved	"lapidary prose"	ELEVATED	
+3	recrudescence	a fresh outbreak after dormancy	"a recrudescence of the bug"	ELEVATED	
+3	proximate cause	the immediate, not ultimate, cause	"the proximate cause was the deploy"	PRECISE	pairs with "root cause"
+3	epistemic	relating to knowledge and its limits	"epistemic humility"	PRECISE	
+3	load-bearing	the part actually holding the argument up	"which assumption is load-bearing?"	PRECISE	borrowed from building; now standard in analysis

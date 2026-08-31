@@ -1,0 +1,66 @@
+1	ate	executed flawlessly (ballroom)	"that presentation ate"	SAFE	
+1	ate and left no crumbs	ate, but total — nothing left to critique	"she ate and left no crumbs"	SAFE	
+1	understood the assignment	delivered exactly what was needed	"the design team understood the assignment"	SAFE	
+1	fire	excellent, impressive	"that pitch was fire"	SAFE	
+1	hits / slaps	is very good (esp. music, food)	"this API design slaps"	SAFE	
+1	hits different	good in a distinctive, hard-to-name way	"coffee after a deploy hits different"	SAFE	
+2	tuff	cool, impressive (spelled that way on purpose)	"that logo is tuff"	CASUAL	
+1	clean	elegant, well-executed	"that refactor is clean"	SAFE	
+1	cooked (verb, active)	performed brilliantly	"let him cook" = let him work, he's onto something	SAFE	
+1	goated / GOAT	greatest of all time	"that library is goated"	SAFE	
+1	W	a win	"big W for the team" / "took the W"	SAFE	
+2	based	admirably true to yourself, unbothered by opinion	"based take"	CASUAL	
+1	valid	legitimate, defensible	"honestly valid"	SAFE	
+2	slay	do something impressively (ballroom)	"slay"	CASUAL	
+2	snapped	delivered an outstanding performance	"she snapped on that deck"	CASUAL	
+2	sheesh	interjection of admiration	"sheeesh"	CASUAL	
+2	bussin'	delicious / very good (AAVE, originally food)	"that's bussin"	CASUAL	
+1	peak	the best of its kind	"peak cinema"	SAFE	
+1	we're so back	things have turned around	"funding cleared — we're so back"	SAFE	
+1	mid	mediocre; the sharpest low-key insult in the language	"the redesign is mid"	SAFE	
+1	cooked (adj., passive)	doomed, in trouble	"if the demo fails we're cooked"	SAFE	
+1	it's so over	despair (paired opposite of "we're so back")	"it's so over"	SAFE	
+1	L	a loss	"took an L on that one"	SAFE	
+1	flop / flop era	failed; a period of failing	"in my flop era"	SAFE	
+2	washed	past your prime, no longer sharp	"I'm washed at this game"	CASUAL	
+1	cringe	embarrassing to witness	"that ad is cringe"	SAFE	
+2	ick	sudden specific revulsion at someone previously liked	"he texted 'k' and it gave me the ick"	CASUAL	
+1	slop	low-effort content, esp. AI-generated	"AI slop"	SAFE	
+1	rage bait	designed to provoke anger for engagement	"that headline is rage bait"	SAFE	
+1	out of pocket	wildly inappropriate, over the line	"that comment was out of pocket"	SAFE	
+2	big yikes	escalated cringe	"big yikes"	CASUAL	
+2	skill issue	your failure, not the tool's (dismissive)	"sounds like a skill issue"	CASUAL	
+2	buns	bad, low quality	"that build is buns"	CASUAL	
+3	chopped	ugly		RISKY	insult about appearance
+3	big back	greedy eater / heavy		DECODE ONLY	fatphobic edge
+3	zesty	effeminate		DECODE ONLY	used homophobically
+2	clanker	slur for robots/AI (from Star Wars)	"damn clanker"	CASUAL	— jokey, but read the room
+1	cap	a lie (AAVE)	"that's cap"	SAFE	
+1	no cap	no lie, seriously	"no cap, best sprint yet"	SAFE	
+2	deadass	seriously, genuinely (NYC/AAVE)	"deadass thought it shipped"	CASUAL	
+1	tea	gossip, the inside story (ballroom — "T" for truth)	"spill the tea"	SAFE	
+2	the tea is	here's the real story	"the tea is he already resigned"	CASUAL	
+1	receipts	proof, screenshots	"post the receipts"	SAFE	
+2	caught in 4K	caught undeniably, with evidence	"caught in 4K"	CASUAL	
+2	periodt	and that's final (ballroom/Black Twitter)	"we ship Friday, periodt"	CASUAL	
+2	fr / fr fr	for real	"fr"	CASUAL	
+2	on god	I swear		CASUAL	
+1	standing on business	following through, holding your position seriously	"he stood on business in that meeting"	SAFE	
+2	larping	pretending to be something you're not	"he's larping as a founder"	CASUAL	
+2	twin	close friend (regardless of resemblance)	"twin, look at this"	CASUAL	
+2	bro / bruh / blud / vro	generic address; "bruh" also = disbelief (AAVE)	"bruh."	CASUAL	
+2	unc	affectionately-mocking "uncle" — someone acting old (AAVE)	"unc is yapping again"	CASUAL	⚠️ likely aimed at *you*
+2	opps	enemies, opposition	"the opps"	CASUAL	
+2	moots	mutuals, people who follow each other		CASUAL	
+2	pookie	affectionate pet name, often ironic	"pookie please"	CASUAL	
+1	glazing	praising someone excessively, embarrassingly	"stop glazing the CEO"	SAFE	
+1	yapping	talking too much, saying nothing	"sorry for yapping"	SAFE	
+2	pick-me	someone performing for approval by putting peers down	"pick-me behavior"	CASUAL	
+2	NPC	someone with no interiority, running a script	"NPC behavior"	CASUAL	
+1	main character	acting as the center of the story	"main character energy"	SAFE	
+1	nepo baby	succeeded via famous/wealthy parents		SAFE	
+1	Karen	entitled, aggressive complainer		SAFE	
+3	sigma	lone-wolf self-reliant type — mostly ironic now		DECODE ONLY	manosphere baggage
+3	simp	excessively deferential in pursuit of romance		RISKY	mildly demeaning
+2	touch grass	go outside, you're too online	"touch grass"	CASUAL	
+2	aura / aura points	intangible cool; gained and lost in points	"lost aura points"	CASUAL	borders Alpha
