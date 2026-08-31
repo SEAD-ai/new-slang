@@ -5,8 +5,8 @@
 Skills, the `/slang` command, and the ambient status-line card:
 
 ```bash
-claude plugin marketplace add SEAD-ai/slang
-claude plugin install slang@slang
+claude plugin marketplace add SEAD-ai/new-slang
+claude plugin install new-slang@new-slang
 ```
 
 Then, in any session:
@@ -30,7 +30,7 @@ every update, so point at the newest one dynamically:
 ```json
 "statusLine": {
   "type": "command",
-  "command": "bash \"$(ls -td ~/.claude/plugins/cache/slang/slang/*/ | head -1)newslang/statusline.sh\"",
+  "command": "bash \"$(ls -td ~/.claude/plugins/cache/new-slang/new-slang/*/ | head -1)newslang/statusline.sh\"",
   "refreshInterval": 6
 }
 ```
@@ -54,7 +54,7 @@ footer hints, including `esc to interrupt`.
 **Skills only** (conversational channels, no ambient card, no `/slang` command):
 
 ```bash
-npx skills add SEAD-ai/slang
+npx skills add SEAD-ai/new-slang
 ```
 
 Works with Claude Code, Codex, Cursor, Windsurf, Cline, and other
@@ -63,16 +63,16 @@ skills-compatible agents.
 **Clone** (everything, tracked by git):
 
 ```bash
-git clone https://github.com/SEAD-ai/slang.git
+git clone https://github.com/SEAD-ai/new-slang.git
 ```
 
-Copy `skills/slang` and `skills/new-slang` into `~/.claude/skills/`, and point
+Copy `skills/new-slang` into `~/.claude/skills/`, and point
 your `statusLine` at `newslang/statusline.sh` as above.
 
 ## Update
 
 ```bash
-claude plugin update slang@slang     # plugin installs
+claude plugin update new-slang@new-slang   # plugin installs
 git pull                             # clone installs
 ```
 
@@ -88,14 +88,13 @@ updates; a hardcoded cache path does not.
 You should get a definition with a register flag.
 
 If you get **"No slang command or skill available here"** while `/slang` still
-appears in the command palette, you are on a version before the `/slang`
-command shipped — run `claude plugin update slang@slang`. (Slash commands come
-from a plugin's `commands/` directory; a skill alone doesn't create one.)
+appears in the command palette, you are on the pre-rename `slang` plugin from
+before the `/slang` command shipped — migrate (below).
 
 To verify the ambient card without waiting for a session restart:
 
 ```bash
-echo '{}' | bash "$(ls -td ~/.claude/plugins/cache/slang/slang/*/ | head -1)newslang/statusline.sh"
+echo '{}' | bash "$(ls -td ~/.claude/plugins/cache/new-slang/new-slang/*/ | head -1)newslang/statusline.sh"
 ```
 
 Two lines out — status, then a card — means it's working.
@@ -116,10 +115,27 @@ Two lines out — status, then a card — means it's working.
 Plain language works too: "switch to Spanish", "go pro", "what does magari
 mean", "decode this Slack message".
 
-## Uninstall
+## Migrating from the old `slang` plugin
+
+This repo was `SEAD-ai/slang` and the plugin was `slang@slang`. GitHub redirects
+the old URLs, but the plugin identity changed, so update by reinstalling:
 
 ```bash
 claude plugin uninstall slang@slang
+claude plugin marketplace remove slang
+claude plugin marketplace add SEAD-ai/new-slang
+claude plugin install new-slang@new-slang
+```
+
+Your `~/.claude/newslang-config.json` survives. If your `statusLine` points at
+the old cache path (`.../cache/slang/slang/...`), update it to the dynamic
+command above. A manual copy at `~/.claude/skills/slang` is superseded — remove
+it so two things don't answer to `/slang`.
+
+## Uninstall
+
+```bash
+claude plugin uninstall new-slang@new-slang
 rm -f ~/.claude/newslang-config.json
 ```
 

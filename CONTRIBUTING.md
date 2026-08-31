@@ -10,7 +10,7 @@ If you're under 25 and something in here made you wince: that wince is the contr
 
 ## Adding a term
 
-Terms live in `skills/slang/references/glossary.md`, grouped by **communicative function** — approval, criticism, gossip, reactions — not alphabetically. That's deliberate: functional grouping is how you retrieve a word mid-sentence, and alphabetical lists are only good for decoding.
+Terms live in `skills/new-slang/references/gen-z/glossary.md`, grouped by **communicative function** — approval, criticism, gossip, reactions — not alphabetically. That's deliberate: functional grouping is how you retrieve a word mid-sentence, and alphabetical lists are only good for decoding.
 
 Every entry needs:
 
@@ -51,7 +51,7 @@ tier ⇥ term ⇥ meaning ⇥ example ⇥ register ⇥ note
   the caveat that makes them safe to know.
 - **REGIONAL terms carry their region in the meaning** — `"cool (Spain)"`, not a
   footnote — because the meaning is what the card shows.
-- The Gen Z deck is **generated** — edit `skills/slang/references/glossary.md` and run
+- The Gen Z deck is **generated** — edit `skills/new-slang/references/gen-z/glossary.md` and run
   `newslang/build-genz-deck.sh`, never the TSV directly.
 
 A new language is a directory, a deck, and a `_manifest.tsv` row
@@ -64,7 +64,7 @@ tier gating, and proves no risky register can reach the ambient rotation.
 
 ## Adding a syntax pattern
 
-Higher value than a term, and rarer. Patterns live in `usage-guide.md` §2.
+Higher value than a term, and rarer. Patterns live in `references/gen-z/usage-guide.md` §2.
 
 Vocabulary expires in months; constructions last years. If you've spotted a productive template — one that generates new sentences rather than being a fixed phrase — that belongs here. Include the slot type (noun? clause? whole scenario?) and three genuinely different examples.
 
@@ -79,7 +79,7 @@ Vocabulary expires in months; constructions last years. If you've spotted a prod
 
 ## Reporting a bad call
 
-Open an issue with the [term report](https://github.com/SEAD-ai/slang/issues/new/choose) template. The most useful reports:
+Open an issue with the [term report](https://github.com/SEAD-ai/new-slang/issues/new/choose) template. The most useful reports:
 
 - "This is dead" — with roughly when it died, if you know
 - "This flag is wrong" — a `[SAFE]` that isn't safe is a bug with real consequences

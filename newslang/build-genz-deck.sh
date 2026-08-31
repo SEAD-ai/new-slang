@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-# Regenerate languages/gen-z/deck.tsv from the slang skill glossary.
-# Run whenever skills/slang/references/glossary.md changes.
+# Regenerate languages/gen-z/deck.tsv from the gen-z glossary.
+# Run whenever skills/new-slang/references/gen-z/glossary.md changes.
 set -euo pipefail
 SRC="${1:?usage: build-genz-deck.sh <glossary.md> <out.tsv>}"
 OUT="${2:?}"

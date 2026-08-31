@@ -4,16 +4,13 @@ argument-hint: "[lite|brainrot] · wtf <term> · decode <text> · audit <copy> �
 allowed-tools: ["Skill", "Read"]
 ---
 
-# Slang
+# New Slang
 
-**FIRST — setup routing:** if `~/.claude/newslang-config.json` does not exist, or `$ARGUMENTS` is `setup`,
-load the `slang:new-slang` skill (fallback: `new-slang`) and run its onboarding before anything
-else — New Slang asks how it should work before it works.
-
-Otherwise, **load the `slang:slang` skill** using the Skill tool. If that name does not resolve
-(the skill is installed standalone rather than as a plugin), load `slang` instead. Everything
-below is routing — the skill itself holds the vocabulary, the gloss rule, the tiers, and the
-boundaries. When config sets a non-gen-z language, `slang:new-slang` is the authority instead.
+**FIRST: load the `new-slang:new-slang` skill** using the Skill tool (fallback: `new-slang`,
+for standalone installs). If `~/.claude/newslang-config.json` does not exist, or `$ARGUMENTS` is
+`setup`, run its onboarding before anything else — New Slang asks how it should work before it
+works. Everything below is routing — the skill holds the dials, the gloss rule, the permission
+model, and the boundaries; for gen-z it loads its `references/gen-z/` authority.
 
 **Invocation:** `$ARGUMENTS`
 

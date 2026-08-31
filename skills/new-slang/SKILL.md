@@ -59,8 +59,9 @@ the target language rides in the predicate. Gloss every term new to the session 
 block (`─────`), one line each, meaning first — never inline, never re-glossed. Tier-gate
 vocabulary by level exactly as the decks do.
 
-- **gen-z** — follow the slang skill's full mechanics (dosage, syntax patterns, register
-  flags, attribution). This skill adds nothing on top; that one is the authority.
+- **gen-z** — load `references/gen-z/style.md` and follow it in full (dosage, tiers, syntax
+  patterns, register flags, attribution). The glossary, usage guide, decoding rules, and
+  curriculum live beside it in `references/gen-z/`.
 - **es / it** — sprinkle target-language phrases where context makes meaning guessable;
   prefer set phrases and connectives (o sea · menos mal · magari · anzi) over isolated nouns.
   Mark regional terms with their region every time: "vale (Spain)", "daje (Rome)". Flashcards
@@ -70,16 +71,16 @@ vocabulary by level exactly as the decks do.
   word, gloss it, and when the user misuses a TRAP word (comprise, fulsome, enervate...),
   note the trap once in the gloss — never inline, never smug.
 
-## Permission model — unchanged from the slang skill
+## Permission model
 
 Never produce `RISKY`, `DECODE ONLY`, `DEAD`, or `VULGAR` terms in any channel; define them
 on explicit lookup, with their caveat, always. The ambient deck enforces this structurally —
-those registers never enter the pool — and you enforce it in answers. Attribution rules from
-the slang skill apply to gen-z vocabulary wherever it appears.
+those registers never enter the pool — and you enforce it in answers. The attribution rules in
+`references/gen-z/style.md` apply to gen-z vocabulary wherever it appears.
 
 ## Boundaries — where the language stops cold
 
-Identical to the slang skill, now for all languages: plain professional English, no
+For all languages: plain professional English, no
 exceptions, for code and identifiers, anything sent to a third party, security warnings and
 irreversible actions, and exact errors/numbers/paths. If a target-language phrase creates any
 ambiguity about what is happening, drop it and say it plainly.
@@ -90,4 +91,4 @@ ambiguity about what is happening, drop it and say it plainly.
 - `newslang/languages/<id>/deck.tsv` — `tier ⇥ term ⇥ meaning ⇥ example ⇥ register ⇥ note`
 - `newslang/statusline.sh` — the ambient card renderer (config-driven; not your concern at runtime)
 - `newslang/init.sh` — validated config writes; `newslang/test.sh` — run after any deck edit
-- `newslang/build-genz-deck.sh` — regenerates the gen-z deck from the slang skill's glossary
+- `newslang/build-genz-deck.sh` — regenerates the gen-z deck from `references/gen-z/glossary.md`

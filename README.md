@@ -58,8 +58,8 @@ Turn on the second channel and Claude also weaves the language into its replies,
 **Full install** (skills + `/slang` command + the ambient card engine):
 
 ```bash
-claude plugin marketplace add SEAD-ai/slang
-claude plugin install slang@slang
+claude plugin marketplace add SEAD-ai/new-slang
+claude plugin install new-slang@new-slang
 ```
 
 Then in any session:
@@ -68,7 +68,7 @@ Then in any session:
 /slang setup
 ```
 
-It asks four things — language, level, channels, density — and offers to wire the status line for you. That's the whole setup. See [INSTALL.md](./INSTALL.md) for the manual status-line wiring, clone installs, and `npx skills add` (which installs the conversational skills only — no ambient card).
+It asks four things — language, level, channels, density — and offers to wire the status line for you. That's the whole setup. See [INSTALL.md](./INSTALL.md) for the manual status-line wiring, clone installs, and `npx skills add` (conversational skill only — no ambient card), and migrating from the old `slang` plugin.
 
 ## How it works
 
@@ -148,9 +148,9 @@ Natural language works everywhere: "what does magari mean", "switch to Spanish",
 ## What's inside
 
 ```
-skills/
-├── slang/                the Gen Z skill — glossary, syntax patterns, tone decoding, curriculum
-└── new-slang/            the router — onboarding, dials, per-language in-answer rules
+skills/new-slang/
+├── SKILL.md              the router — onboarding, dials, per-language in-answer rules
+└── references/gen-z/     the Gen Z authority — mechanics, glossary, syntax patterns, tone decoding, curriculum
 newslang/
 ├── statusline.sh         the ambient card renderer (config-driven, <50ms, no network)
 ├── languages/            one deck per language: tier ⇥ term ⇥ meaning ⇥ example ⇥ register ⇥ note
