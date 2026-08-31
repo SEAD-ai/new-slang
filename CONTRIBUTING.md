@@ -32,6 +32,36 @@ Every entry needs:
 
 **Be strict with `[SAFE]`.** The default audience is an adult professional who will take the flag literally and say the word to a colleague. When torn between `[SAFE]` and `[CASUAL]`, choose `[CASUAL]`.
 
+## Adding a language, or cards to one
+
+Language decks live in `newslang/languages/<id>/deck.tsv`, one card per line, six
+tab-separated fields:
+
+```
+tier ⇥ term ⇥ meaning ⇥ example ⇥ register ⇥ note
+```
+
+- **tier** — 1 (beginner) / 2 (intermediate) / 3 (pro). Levels gate content: tier 1
+  is what a textbook teaches first, tier 3 is the slang. Order within a tier doesn't
+  matter; the renderer shuffles daily.
+- **register** — `CORE` `CASUAL` `REGIONAL` for languages; `PRECISE` `TRAP` `ELEVATED`
+  for Advanced English; `SAFE` `CASUAL` `RISKY` `DECODE ONLY` `DEAD` for Gen Z.
+  Only the registers listed in `languages/_manifest.tsv` for that language reach the
+  ambient card — `RISKY` and `DECODE ONLY` never do, because a glanceable card strips
+  the caveat that makes them safe to know.
+- **REGIONAL terms carry their region in the meaning** — `"cool (Spain)"`, not a
+  footnote — because the meaning is what the card shows.
+- The Gen Z deck is **generated** — edit `skills/slang/references/glossary.md` and run
+  `newslang/build-genz-deck.sh`, never the TSV directly.
+
+A new language is a directory, a deck, and a `_manifest.tsv` row
+(`id ⇥ display name ⇥ description ⇥ ambient-safe registers`). Ethnic and regional
+dialects are decode-only by policy — see the README — which structurally means:
+no production patterns, and nothing outside the manifest's safe list.
+
+**Every deck PR must keep `newslang/test.sh` green.** It lints the format, checks
+tier gating, and proves no risky register can reach the ambient rotation.
+
 ## Adding a syntax pattern
 
 Higher value than a term, and rarer. Patterns live in `usage-guide.md` §2.

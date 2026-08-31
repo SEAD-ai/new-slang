@@ -1,56 +1,85 @@
 # Install
 
-## Quickest
+## Full install (recommended)
 
-```bash
-npx skills add SEAD-ai/slang
-```
-
-Works with Claude Code, Codex, Cursor, Windsurf, Cline, and other skills-compatible agents.
-
-## Claude Code plugin
+Skills, the `/slang` command, and the ambient status-line card:
 
 ```bash
 claude plugin marketplace add SEAD-ai/slang
 claude plugin install slang@slang
 ```
 
-## Manual
+Then, in any session:
 
-Clone and copy the skill directory:
+```
+/slang setup
+```
+
+Four questions — language, level, channels, density — written to
+`~/.claude/newslang-config.json`. The config lives outside the plugin, so it
+survives updates.
+
+## Wiring the ambient card
+
+`/slang setup` offers to do this for you. To do it by hand, add to
+`~/.claude/settings.json`:
+
+**Plugin install** — the cache path contains a version hash that changes on
+every update, so point at the newest one dynamically:
+
+```json
+"statusLine": {
+  "type": "command",
+  "command": "bash \"$(ls -td ~/.claude/plugins/cache/slang/slang/*/ | head -1)newslang/statusline.sh\"",
+  "refreshInterval": 6
+}
+```
+
+**Clone install** — a stable path, no indirection:
+
+```json
+"statusLine": {
+  "type": "command",
+  "command": "~/path/to/slang/newslang/statusline.sh",
+  "refreshInterval": 6
+}
+```
+
+`refreshInterval: 6` matches the card rotation — that's what keeps the card
+moving while Claude is still working. Heads-up: a custom status line hides some
+footer hints, including `esc to interrupt`.
+
+## Other ways in
+
+**Skills only** (conversational channels, no ambient card, no `/slang` command):
+
+```bash
+npx skills add SEAD-ai/slang
+```
+
+Works with Claude Code, Codex, Cursor, Windsurf, Cline, and other
+skills-compatible agents.
+
+**Clone** (everything, tracked by git):
 
 ```bash
 git clone https://github.com/SEAD-ai/slang.git
-cp -R slang/skills/slang ~/.claude/skills/
 ```
 
-You should end up with:
+Copy `skills/slang` and `skills/new-slang` into `~/.claude/skills/`, and point
+your `statusLine` at `newslang/statusline.sh` as above.
 
-```
-~/.claude/skills/slang/
-├── SKILL.md
-└── references/
-    ├── glossary.md
-    ├── usage-guide.md
-    ├── decoding.md
-    └── practice.md
-```
-
-## Project-scoped
-
-To give a whole team the skill, commit it into the repo at `.claude/skills/slang/`:
+## Update
 
 ```bash
-mkdir -p .claude/skills
-cp -R /path/to/slang/skills/slang .claude/skills/
-git add .claude/skills/slang && git commit -m "add slang skill"
+claude plugin update slang@slang     # plugin installs
+git pull                             # clone installs
 ```
 
-Anyone working in that repo picks it up automatically.
+Your config survives both. The dynamic statusLine command above survives plugin
+updates; a hardcoded cache path does not.
 
 ## Verify
-
-Start a session and run:
 
 ```
 /slang wtf mid
@@ -58,44 +87,40 @@ Start a session and run:
 
 You should get a definition with a register flag.
 
-If you get **"No slang command or skill available here"** while `/slang` still appears in the command
-palette, you are on a version before the `/slang` command shipped. Update:
+If you get **"No slang command or skill available here"** while `/slang` still
+appears in the command palette, you are on a version before the `/slang`
+command shipped — run `claude plugin update slang@slang`. (Slash commands come
+from a plugin's `commands/` directory; a skill alone doesn't create one.)
+
+To verify the ambient card without waiting for a session restart:
 
 ```bash
-claude plugin update slang@slang
+echo '{}' | bash "$(ls -td ~/.claude/plugins/cache/slang/slang/*/ | head -1)newslang/statusline.sh"
 ```
 
-Slash commands come from a plugin's `commands/` directory. A plugin's *skills* are namespaced
-`plugin:skill` and are normally model-invoked, so a skill alone does not create a bare `/slang`
-entry point — which is why the plugin install and the `~/.claude/skills/` install used to behave
-differently. Both now route through the same command.
-
-If it still fails, check that `SKILL.md` sits directly inside a directory named `slang` and that the
-YAML frontmatter at the top is intact.
+Two lines out — status, then a card — means it's working.
 
 ## Use
 
 ```
-/slang                          turn it on
-/slang lite                     work-Slack safe tier
+/slang setup                    the four questions (re-runs onboarding)
+/slang                          turn on the in-answer channel
+/slang wtf <term>               define one term
 /slang decode <text>            translate an inbound message, including tone
 /slang audit <copy>             check brand copy before it ships
 /slang check <text>             vibe check your own writing
-/slang wtf <term>               define one term
 /slang drill                    5 rapid questions
 /slang off                      back to normal
 ```
 
-Natural language works too — "slang mode", "what does glazing mean", "vibe check this", "decode this Slack message for me".
+Plain language works too: "switch to Spanish", "go pro", "what does magari
+mean", "decode this Slack message".
 
 ## Uninstall
 
 ```bash
-rm -rf ~/.claude/skills/slang
-```
-
-Or, if installed as a plugin:
-
-```bash
 claude plugin uninstall slang@slang
+rm -f ~/.claude/newslang-config.json
 ```
+
+And remove the `statusLine` block from `~/.claude/settings.json`.

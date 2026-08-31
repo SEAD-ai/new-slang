@@ -1,6 +1,6 @@
 {
   "name": "slang",
-  "description": "Speak and teach current internet slang (Gen Z + Gen Alpha). Decode what younger colleagues actually mean, audit brand copy for dead slang, and learn to deploy it without getting clocked.",
+  "description": "New Slang \u2014 learn a language in the margin of your work. An ambient flashcard in your status line (zero tokens) plus in-answer immersion. Gen Z English, Spanish, Italian, Advanced English; levels gate content, density gates frequency.",
   "author": {
     "name": "SEAD",
     "url": "https://sead.ai"
@@ -9,8 +9,12 @@
   "license": "MIT",
   "keywords": [
     "slang",
+    "language-learning",
+    "spanish",
+    "italian",
     "gen-z",
-    "gen-alpha",
+    "vocabulary",
+    "statusline",
     "claude-code",
     "skill",
     "communication",
