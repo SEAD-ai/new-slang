@@ -60,7 +60,8 @@ dialects are decode-only by policy — see the README — which structurally mea
 no production patterns, and nothing outside the manifest's safe list.
 
 **Every deck PR must keep `newslang/test.sh` green.** It lints the format, checks
-tier gating, and proves no risky register can reach the ambient rotation.
+tier gating, and proves no risky register can reach either output channel — the
+ambient rotation or the in-answer context block the SessionStart hook injects.
 
 ## Adding a syntax pattern
 

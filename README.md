@@ -53,6 +53,8 @@ Turn on the second channel and Claude also weaves the language into its replies,
 **magari** — maybe / if only. As an exclamation it means "I wish."
 ```
 
+That second channel can be per-chat or global. `/new-slang global` puts it in **every** session without being invoked; `/new-slang here` keeps it to chats where you ask for it.
+
 ## Install
 
 **Full install** (skills + `/new-slang` command + the ambient card engine):
@@ -72,15 +74,18 @@ It asks four things — language, level, channels, density — and offers to wir
 
 ## How it works
 
-Three independent dials, set once at `/new-slang setup` and changeable any time in plain language ("switch to Spanish", "go pro", "too much, dial it back"):
+Four independent dials, set once at `/new-slang setup` and changeable any time in plain language ("switch to Spanish", "go pro", "too much, dial it back"):
 
 | Dial | Governs | Values |
 |---|---|---|
 | **Language** | which deck is live | gen-z · es · it · en-adv |
 | **Level** | what content is unlocked, and card format | beginner · intermediate · pro |
 | **Density** | how often it appears in Claude's answers | off · seasoned · fluent · saturated |
+| **Scope** | whether in-answer immersion waits to be invoked | session · global |
 
 Two of these are deliberately **not** the same dial. A beginner may want saturated immersion — that's how second languages are actually acquired. A pro may want one term per paragraph in a work context. Level gates *content*; density gates *frequency*; the skill never infers one from the other.
+
+**Scope is the fourth, and it is the only one that costs you something everywhere.** The ambient card is global and free — zero tokens, it never touches an answer. In-answer immersion at `scope: global` rides in on a `SessionStart` hook and spends roughly 600–700 tokens of context in every session you open, in every project. That is the honest price of not having to ask for it. `session` scope is the default, and free.
 
 **Levels gate content, not just difficulty.** Beginner Spanish is `la mesa` and the pedir/preguntar trap. Slang — `qué chido`, `daje`, verlan — unlocks at pro. Slang is the top tier of every language, not a separate toy.
 
@@ -134,14 +139,18 @@ One move per 1–2 sentences, in the predicate, deadpan. If nobody reacts, you d
 
 | Command | Does |
 |---|---|
-| `/new-slang setup` | The four questions. Also runs automatically on first use. |
-| `/new-slang` | Turn on the in-answer channel with your configured language. |
+| `/new-slang setup` | The questions. Also runs automatically on first use — it never picks a language for you. |
+| `/new-slang` | Turn on the in-answer channel for this chat. |
+| `/new-slang global` | In-answer immersion in every session, no invocation needed. |
+| `/new-slang here` | Back to per-chat: immersion only where New Slang is invoked. |
 | `/new-slang wtf <term>` | Define, with register flag and what it's commonly mistaken for. |
 | `/new-slang decode <text>` | **Inbound translation, including tone.** The most useful one. |
 | `/new-slang audit <copy>` | Check brand/marketing copy before it ships — dead terms, register mismatch, origin risk. |
 | `/new-slang check <text>` | Vibe check *your* writing. Scored /10, names the tell that outs you. |
 | `/new-slang drill` | 5 rapid questions. |
-| `/new-slang off` | Back to normal. |
+| `/new-slang off` | Quiet immersion **in this chat**. The card keeps running. |
+| `/new-slang off card` | Stop the ambient card everywhere. |
+| `/new-slang off all` | Stop everything, hook included. |
 
 Natural language works everywhere: "what does magari mean", "switch to Spanish", "vibe check this", "decode this Slack message".
 
@@ -153,9 +162,11 @@ skills/new-slang/
 └── references/gen-z/     the Gen Z authority — mechanics, glossary, syntax patterns, tone decoding, curriculum
 newslang/
 ├── statusline.sh         the ambient card renderer (config-driven, <50ms, no network)
+├── inanswer.sh           the SessionStart hook behind scope:global — silent unless you opted in
 ├── languages/            one deck per language: tier ⇥ term ⇥ meaning ⇥ example ⇥ register ⇥ note
 ├── init.sh               validated config writes → ~/.claude/newslang-config.json
-└── test.sh               33 checks — run it after any deck edit
+└── test.sh               61 checks — run it after any deck or script edit
+hooks/hooks.json          registers the SessionStart hook for plugin installs
 ```
 
 Vocabulary is the easy half. What the decks actually encode is **register judgment** — which words are safe where, which are regional, which are traps — and the Gen Z skill teaches ~10 productive syntax patterns (`it's giving ___`, `not me ___ing`) because constructions outlive words by years.

@@ -59,6 +59,15 @@ if [ -r "$CONF" ] && [ "$HAVE_JQ" = 1 ]; then
 fi
 [ "$ambient" = "true" ] || exit 0
 
+# Never pick a language on the user's behalf. With no config at all this is a
+# first run: nudge toward setup instead of silently defaulting to a deck they
+# did not choose. A config that exists but will not parse still falls back to
+# defaults — that is a degraded session, not an unasked question.
+if [ ! -r "$CONF" ]; then
+  printf '%s\n' "${C_TEAL}▸${R} ${DIM}New Slang${R} ${B}/new-slang setup${R} ${DIM}— pick your language${R} ${C_TEAL}[SETUP]${R}"
+  exit 0
+fi
+
 LANG_ID=$(get '.language' gen-z)
 LEVEL=$(get '.level' beginner)
 ROTATE=$(get '.rotate' 6)

@@ -1,0 +1,15 @@
+{
+  "description": "New Slang — injects in-answer immersion at session start when the user has chosen scope:global. Silent and free when they have not.",
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/newslang/inanswer.sh\""
+          }
+        ]
+      }
+    ]
+  }
+}
