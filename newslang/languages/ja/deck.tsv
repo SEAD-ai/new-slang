@@ -1,0 +1,34 @@
+1	おつかれさま (otsukaresama)	thanks for your work — greeting, thanks, and goodbye at once	"おつかれさまです"	CORE	no English equivalent; おつかれさまです upward, おつかれ between peers
+1	よろしくお願いします (yoroshiku onegaishimasu)	please treat me well / thanks in advance	"よろしくお願いします"	CORE	ends emails, opens relationships; carries no information, carries everything
+1	すみません (sumimasen)	excuse me / sorry / thank you	"すみません、ちょっといいですか"	CORE	does all three jobs; more useful day to day than ごめんなさい
+1	大丈夫です (daijōbu desu)	I'm fine, or no thanks — both	"— コーヒーいる? — 大丈夫です"	TRAP	answering an offer it almost always means no; the famous ambiguity
+1	ご苦労さま (gokurōsama)	thanks for your work, downward only	"ご苦労さま" (boss to staff)	TRAP	to a superior it insults; use おつかれさま instead
+1	は vs が (wa vs ga)	topic marker vs subject marker	"私は学生です" / "誰が来た?"	CORE	the classic split; は sets what you are talking about, が picks out who
+1	ありがとうございます (arigatō gozaimasu)	thank you (polite)	"ありがとうございます"	CORE	past tense ございました for a favor already finished
+1	失礼します (shitsurei shimasu)	excuse my rudeness	"失礼します" (entering a room)	CORE	entering, leaving, ending a call — the all-purpose threshold phrase
+1	いただきます (itadakimasu)	said before eating	"いただきます"	CORE	thanks for the food, not for the cook; ごちそうさま after
+1	微妙 (bimyō)	meh, not great	"味は微妙だった"	TRAP	dictionaries say subtle or delicate; in speech it is a soft no
+2	お世話になっております (osewa ni natte orimasu)	thank you for your continued support	"いつもお世話になっております"	FORMAL	opens virtually every business email; skipping it reads as cold
+2	恐れ入りますが (osore irimasu ga)	I am terribly sorry, but	"恐れ入りますが、ご確認ください"	FORMAL	softens a request; the more you soften, the harder the ask can be
+2	承知しました (shōchi shimashita)	understood	"承知しました"	FORMAL	upward; 了解です is casual and reads flippant to a superior
+2	お手数ですが (otesū desu ga)	sorry for the trouble, but	"お手数ですが、返信をお願いします"	FORMAL	acknowledges you are making work for them; near-obligatory in requests
+2	とりあえず (toriaezu)	for now, to start with	"とりあえずビール"	CASUAL	the beer-ordering word; also brackets any provisional decision
+2	なるほど (naruhodo)	I see, that makes sense	"なるほど、そういうことか"	CASUAL	to a superior it can read as grading them; そうなんですね is safer
+2	やっぱり (yappari)	as I thought / on second thought	"やっぱりやめておく"	CASUAL	either confirms a hunch or reverses a decision; tone decides
+2	適当 (tekitō)	appropriate, or slapdash	"適当にやっておいて"	TRAP	the same word means well-judged and couldn't-care-less
+2	結構です (kekkō desu)	that's fine, or no thank you	"— おかわりは? — 結構です"	TRAP	second famous yes/no ambiguity; declining, in practice
+2	ちょっと… (chotto…)	a little… — trailing off is the refusal	"明日はちょっと…"	CASUAL	the unfinished sentence is the no; finishing it would be rude
+2	しょうがない (shō ga nai)	it can't be helped	"雨だからしょうがない"	CASUAL	acceptance, not defeat; しかたない is the more formal twin
+2	さすが (sasuga)	just as expected from you	"さすがだね"	CASUAL	a compliment; flattens into sarcasm with the wrong tone
+2	気が利く (ki ga kiku)	thoughtful, quick to notice what's needed	"彼女は気が利く"	CASUAL	high praise at work; the noticing is the virtue
+3	やばい (yabai)	amazing or terrible, tone decides	"このラーメンやばい"	CASUAL	originally dangerous; now the closest thing to insane or crazy
+3	めっちゃ (meccha)	super, really	"めっちゃおいしい"	REGIONAL	Kansai origin, now nationwide in casual speech
+3	ウケる (ukeru)	that's hilarious	"それウケる"	CASUAL	reacting to something funny, not describing yourself
+3	ぶっちゃけ (bucchake)	to be blunt, honestly	"ぶっちゃけ無理"	CASUAL	flags the unvarnished version is coming
+3	だるい (darui)	can't be bothered, sluggish	"今日だるい"	CASUAL	body or mood; a whole afternoon in three syllables
+3	草 (kusa)	lol (literally: grass)	"草生えた"	CASUAL	from www looking like grass; internet register, not speech
+3	マジで (maji de)	seriously, for real	"マジで?"	CASUAL	question or intensifier; ほんまに in Kansai
+3	なんでやねん (nande ya nen)	what the hell / you're kidding (Kansai)	"なんでやねん!"	REGIONAL	Kansai; the standard comeback in a comedy double act
+3	あかん (akan)	no good, don't (Kansai)	"それはあかん"	REGIONAL	Kansai for だめ; softer to the ear, no softer in meaning
+3	おまえ (omae)	blunt you	"おまえ何してんの"	RISKY	fine between close friends, insulting otherwise — never in the card rotation
+3	きさま (kisama)	hostile you	"きさま!"	DECODE ONLY	historically respectful, now purely aggressive; understand it, never say it

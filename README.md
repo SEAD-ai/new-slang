@@ -7,7 +7,7 @@
 <p align="center">
   A Claude Code plugin that teaches you a language in the margin of your work.<br>
   A flashcard rotates in your status line while Claude thinks. Costs nothing, touches nothing.<br>
-  Gen Z English · Spanish · Italian · Advanced English — more coming.
+  Gen Z English · Spanish · Italian · Japanese · Advanced English — more coming.
 </p>
 
 <p align="center">
@@ -37,6 +37,10 @@ While you work, the status line at the bottom of Claude Code carries a card. Eve
 
 ```
 ▸ Spanish  sobremesa — the talk that lingers after a meal  [CORE]
+```
+
+```
+▸ Japanese  ご苦労さま (gokurōsama) — thanks for your work, downward only  [TRAP]
 ```
 
 ```
@@ -78,14 +82,14 @@ Four independent dials, set once at `/new-slang setup` and changeable any time i
 
 | Dial | Governs | Values |
 |---|---|---|
-| **Language** | which deck is live | gen-z · es · it · en-adv |
+| **Language** | which deck is live | gen-z · es · it · ja · en-adv |
 | **Level** | what content is unlocked, and card format | beginner · intermediate · pro |
 | **Density** | how often it appears in Claude's answers | off · seasoned · fluent · saturated |
 | **Scope** | whether in-answer immersion waits to be invoked | session · global |
 
 Two of these are deliberately **not** the same dial. A beginner may want saturated immersion — that's how second languages are actually acquired. A pro may want one term per paragraph in a work context. Level gates *content*; density gates *frequency*; the skill never infers one from the other.
 
-**Scope is the fourth, and it is the only one that costs you something everywhere.** The ambient card is global and free — zero tokens, it never touches an answer. In-answer immersion at `scope: global` rides in on a `SessionStart` hook and spends roughly 600–700 tokens of context in every session you open, in every project. That is the honest price of not having to ask for it. `session` scope is the default, and free.
+**Scope is the fourth, and it is the only one that costs you something everywhere.** The ambient card is global and free — zero tokens, it never touches an answer. In-answer immersion at `scope: global` rides in on a `SessionStart` hook and spends roughly 600–950 tokens of context in every session you open, depending on the language (Japanese cards carry both kana and romaji, so it sits at the top of that range), in every project. That is the honest price of not having to ask for it. `session` scope is the default, and free.
 
 **Levels gate content, not just difficulty.** Beginner Spanish is `la mesa` and the pedir/preguntar trap. Slang — `qué chido`, `daje`, verlan — unlocks at pro. Slang is the top tier of every language, not a separate toy.
 
@@ -96,7 +100,10 @@ Two of these are deliberately **not** the same dial. A beginner may want saturat
 | **Gen Z English** | work-safe internet register | the full casual layer |
 | **Spanish** | core traps (pedir vs preguntar, el agua) | regional slang, tagged by country — `vale (Spain)`, `no manches (MX)` |
 | **Italian** | false friends (`attualmente` ≠ actually, `i parenti` ≠ parents) | Roman and Milanese slang — `daje`, `che sbatti` |
+| **Japanese** | the phrases that carry the day — `おつかれさま`, `よろしくお願いします`, and the yes/no traps (`大丈夫です`, `結構です`) | business keigo (`お世話になっております`) and casual register — `やばい`, `草`, Kansai `なんでやねん` |
 | **Advanced English** | words everyone misuses (`comprise`, `peruse`, `enervate`) | the precise formal register — `specious`, `anodyne`, `lapidary` |
+
+Japanese is where the premise stops being a metaphor. Its politeness system *is* register — `ご苦労さま` and `おつかれさま` mean the same thing and one of them insults your boss — so the flag on the card is doing the same work as `[RISKY]` does in Gen Z. `[FORMAL]` cards carry the keigo that textbooks defer and offices expect on day one.
 
 Advanced English is the same product pointed the other way: Gen Z is the informal register textbooks skip, Advanced English is the precise register daily use erodes. `[TRAP]` flags mark words that mean the opposite of what most people think.
 

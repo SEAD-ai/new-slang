@@ -44,8 +44,10 @@ tier ⇥ term ⇥ meaning ⇥ example ⇥ register ⇥ note
 - **tier** — 1 (beginner) / 2 (intermediate) / 3 (pro). Levels gate content: tier 1
   is what a textbook teaches first, tier 3 is the slang. Order within a tier doesn't
   matter; the renderer shuffles daily.
-- **register** — `CORE` `CASUAL` `REGIONAL` for languages; `PRECISE` `TRAP` `ELEVATED`
-  for Advanced English; `SAFE` `CASUAL` `RISKY` `DECODE ONLY` `DEAD` for Gen Z.
+- **register** — `CORE` `CASUAL` `REGIONAL` for languages, plus `FORMAL` and `TRAP`
+  where a language has a politeness axis or a stock of false friends (Japanese uses
+  both); `PRECISE` `TRAP` `ELEVATED` for Advanced English; `SAFE` `CASUAL` `RISKY`
+  `DECODE ONLY` `DEAD` for Gen Z.
   Only the registers listed in `languages/_manifest.tsv` for that language reach the
   ambient card — `RISKY` and `DECODE ONLY` never do, because a glanceable card strips
   the caveat that makes them safe to know.

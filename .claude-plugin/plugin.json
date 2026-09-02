@@ -1,6 +1,6 @@
 {
   "name": "new-slang",
-  "description": "New Slang \u2014 learn a language in the margin of your work. An ambient flashcard in your status line (zero tokens) plus in-answer immersion. Gen Z English, Spanish, Italian, Advanced English; levels gate content, density gates frequency.",
+  "description": "New Slang \u2014 learn a language in the margin of your work. An ambient flashcard in your status line (zero tokens) plus in-answer immersion. Gen Z English, Spanish, Italian, Japanese, Advanced English; levels gate content, density gates frequency.",
   "author": {
     "name": "SEAD",
     "url": "https://sead.ai"
@@ -12,6 +12,7 @@
     "language-learning",
     "spanish",
     "italian",
+    "japanese",
     "gen-z",
     "vocabulary",
     "statusline",

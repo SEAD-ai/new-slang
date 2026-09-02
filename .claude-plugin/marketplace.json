@@ -1,7 +1,7 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "new-slang",
-  "description": "New Slang \u2014 teach yourself a language while Claude works. Ambient status-line flashcards and in-answer immersion across Gen Z English, Spanish, Italian, and Advanced English.",
+  "description": "New Slang \u2014 teach yourself a language while Claude works. Ambient status-line flashcards and in-answer immersion across Gen Z English, Spanish, Italian, Japanese, and Advanced English.",
   "owner": {
     "name": "SEAD",
     "url": "https://sead.ai"
@@ -9,7 +9,7 @@
   "plugins": [
     {
       "name": "new-slang",
-      "description": "the vocabulary you weren't taught, at either end \u2014 an ambient flashcard while Claude thinks, immersion in its answers when you want it. Four languages, three levels, your dials.",
+      "description": "the vocabulary you weren't taught, at either end \u2014 an ambient flashcard while Claude thinks, immersion in its answers when you want it. Five languages, three levels, your dials.",
       "source": "./",
       "category": "productivity"
     }

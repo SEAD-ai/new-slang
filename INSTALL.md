@@ -74,8 +74,9 @@ registered on install.
 
 Two things worth knowing before you switch it on:
 
-- It costs roughly **600–700 tokens of context per session**, every session. The
-  ambient card is still free; this channel is not.
+- It costs roughly **600–950 tokens of context per session**, every session — the
+  language decides where in that range you land, with Japanese highest. The ambient
+  card is still free; this channel is not.
 - It is on **everywhere** — work repos, screen shares, pairing. `/new-slang off`
   quiets it for the current conversation; `/new-slang off all` turns it off for good.
 

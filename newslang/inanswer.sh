@@ -69,6 +69,7 @@ VOCAB=$(awk -F'\t' -v mt="$MAXTIER" -v regs=",$SAFE_REGS," -v seed="$day" '
 case "$LANG_ID" in
   gen-z)  NUANCE="Register flags matter more than volume: never produce a term the deck marks RISKY, DECODE ONLY, DEAD, or VULGAR. State AAVE and ballroom/drag origins where they apply, once, plainly, without lecturing." ;;
   es|it)  NUANCE="Prefer set phrases and connectives over isolated nouns. Mark regional terms with their region every time — \"vale (Spain)\", \"daje (Rome)\". When the user writes in the target language, correct gender and conjugation gently, once, inside the gloss block." ;;
+  ja)     NUANCE="Politeness is the lesson, not a detail: name the level a term belongs to (keigo, polite, or casual) whenever it is not obvious, and never model a casual form aimed upward. Write romaji beside the Japanese the first time a term appears in a session, and keep set phrases whole — おつかれさま is one unit, not three words." ;;
   en-adv) NUANCE="Do not sprinkle — deploy. Use the precise word only where it is genuinely the best word. When the user misuses a TRAP word (comprise, fulsome, enervate), note the trap once in the gloss: never inline, never smug." ;;
   *)      NUANCE="Introduce terms where context makes the meaning guessable." ;;
 esac

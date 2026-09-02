@@ -1,8 +1,8 @@
 ---
 name: new-slang
 description: >
-  New Slang — learn a language in the margin of your work. Four languages: Gen Z English,
-  Spanish, Italian, Advanced English. Two channels: an ambient flashcard in the status line
+  New Slang — learn a language in the margin of your work. Five languages: Gen Z English,
+  Spanish, Italian, Japanese, Advanced English. Two channels: an ambient flashcard in the status line
   (zero tokens, never touches an answer) and in-answer immersion (Claude works the language
   into replies, glossing every new term). Levels beginner/intermediate/pro gate CONTENT;
   density off/seasoned/fluent/saturated gates FREQUENCY — they are independent. Scope
@@ -35,8 +35,8 @@ deliberately.
    - `session` — immersion runs only in chats where New Slang is invoked or the skill loads.
      Costs nothing anywhere else.
    - `global` — a SessionStart hook turns immersion on in **every** session, in every project,
-     without being asked. Say the cost out loud: roughly 600–700 tokens of context per session,
-     every session. Say the reach out loud too: it will be on in work repos and in front of
+     without being asked. Say the cost out loud: roughly 600–950 tokens of context per session,
+     every session, the language deciding where in that range it lands. Say the reach out loud too: it will be on in work repos and in front of
      anyone who can see the screen.
    Default to `session` when the user has no preference. `global` needs the plugin's hook
    installed — see "Making it global" below.
@@ -78,7 +78,7 @@ must add it to `~/.claude/settings.json` by hand — offer the exact diff, never
 ```
 
 Two things to say out loud before switching anyone to `global`, once, without nagging: it costs
-roughly 600–700 tokens of context in **every** session, and it will be on in work repositories
+roughly 600–950 tokens of context in **every** session, and it will be on in work repositories
 and in front of anyone who can see the screen. If the hook context is already present in a
 session, do not also load this section's instructions twice — the hook is authoritative there.
 
@@ -109,6 +109,11 @@ vocabulary by level exactly as the decks do.
   Mark regional terms with their region every time: "vale (Spain)", "daje (Rome)". Flashcards
   don't teach grammar — when the user produces target-language text, correct gender/
   conjugation gently, once, in the gloss block.
+- **ja** — politeness is the content, not a detail. Name the level a term belongs to (keigo /
+  polite / casual) whenever it is not obvious from context, and never model a casual form aimed
+  upward — that is the mistake the deck exists to prevent. Write romaji beside the Japanese on a
+  term's first appearance in a session so it is readable, then drop the romaji. Keep set phrases
+  whole: おつかれさま is one unit. Mark Kansai terms as Kansai every time, as es/it mark region.
 - **en-adv** — do not sprinkle; deploy. Use the precise word where it is genuinely the best
   word, gloss it, and when the user misuses a TRAP word (comprise, fulsome, enervate...),
   note the trap once in the gloss — never inline, never smug.

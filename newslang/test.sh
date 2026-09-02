@@ -69,6 +69,51 @@ for t in bash awk sed grep sort cut date wc tput mktemp dirname basename printf 
 cfg_out=$(echo "$J" | PATH="$TMP/bin" NEWSLANG_CONFIG="$TMP/nope.json" COLUMNS=130 bash "$SL")
 [ "$(printf '%s\n' "$cfg_out" | wc -l | tr -d ' ')" = 2 ] && ok "no jq: card still renders (defaults)" || bad "no jq broke rendering"
 
+echo "— display width: CJK glyphs are two columns wide —"
+# Independent check: the script estimates width from byte counts, so the test
+# must not reuse that heuristic or it would only prove the code agrees with
+# itself. Measure with Unicode's own East Asian Width table instead, one call
+# per (language, level, width) over every card in the rotation.
+cat > "$TMP/width.py" <<'PYW'
+import sys, re, unicodedata
+W = int(sys.argv[1]); label = sys.argv[2]
+ansi = re.compile(r'\x1b\[[0-9;]*m')
+def cols(t):
+    n = 0
+    for ch in t:
+        if unicodedata.combining(ch): continue
+        n += 2 if unicodedata.east_asian_width(ch) in ('W', 'F') else 1
+    return n
+seen = widest = bad = 0
+for line in sys.stdin:
+    t = ansi.sub('', line.rstrip('\n'))
+    if not t: continue
+    w = cols(t); seen += 1; widest = max(widest, w)
+    if w > W:
+        bad += 1
+        print("    %s at %d cols: %d cols — %s" % (label, W, w, t))
+print("STATS %d %d %d" % (seen, widest, bad))
+PYW
+over=0; widest=0; checked=0
+while IFS=$'\t' read -r id _ _ _; do
+  for lvl in beginner intermediate pro; do
+    cfg "$id" "$lvl"
+    for W in 60 80 100 130; do
+      out=$(echo "$J" | NEWSLANG_CONFIG="$TMP/c.json" NEWSLANG_DEBUG=render COLUMNS=$W "$SL" \
+            | tail -n +2 | python3 "$TMP/width.py" "$W" "$id/$lvl")
+      printf '%s\n' "$out" | grep -v '^STATS' | grep . || true
+      set -- $(printf '%s\n' "$out" | sed -n 's/^STATS //p')
+      checked=$((checked + ${1:-0})); [ "${2:-0}" -gt "$widest" ] && widest=$2; over=$((over + ${3:-0}))
+    done
+  done
+done < "$HERE/languages/_manifest.tsv"
+[ "$over" = 0 ] && ok "no card overflows any terminal ($checked cards swept, widest $widest)" || bad "$over of $checked cards overflowed"
+
+cfg ja beginner
+one() { echo "$J" | NEWSLANG_CONFIG="$TMP/c.json" NEWSLANG_DEBUG=render COLUMNS=$1 "$SL" | sed -n '2p'; }
+wide=$(one 130 | wc -c); narrow=$(one 60 | wc -c)
+[ "$wide" -gt "$narrow" ] && ok "narrow terminal degrades the card" || bad "width guard did not fire"
+
 echo "— determinism & speed —"
 cfg it intermediate
 a=$(run | tail -1); b=$(run | tail -1)
