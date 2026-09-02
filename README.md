@@ -1,7 +1,7 @@
 <h1 align="center">New Slang</h1>
 
 <p align="center">
-  <strong>the vocabulary you weren't taught — at either end</strong>
+  <strong>"It will change your life"</strong>
 </p>
 
 <p align="center">
